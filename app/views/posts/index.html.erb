@@ -23,5 +23,49 @@
 </table>
 
 <br />
+<h2>== Posts.scope_top_5: 5 Records, Order by Title Descending ==</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts_top_5.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'Show', post %></td>
+  <tr>
+<% end %>
+</table>
+
+<br />
+<h2>== Posts.scope_top_three: 3 Records, Order by Name Ascending, Starts 2nd Record==</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts_top_3.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'Show', post %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'New Post', new_post_path %>

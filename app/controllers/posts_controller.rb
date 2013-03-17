@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @posts_top_5  = Post.top_five
+    @posts_top_3 = Post.top_three
 
     respond_to do |format|
       format.html # index.html.erb
