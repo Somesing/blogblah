@@ -22,30 +22,30 @@
 <% end %>
 </table>
 
-<br />
-<h2>== Posts.scope_top_5: 5 Records, Order by Title Descending ==</h2>
+    <br/>
+    <h2>== Posts.scope_top_5: 5 Records, Order by Title Descending ==</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th></th>
+    	<th></th>
+    	<th></th>
+      </tr>
 
-<% @posts_top_5.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-  <tr>
-<% end %>
-</table>
+    <% @posts_top_5.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Show', post %></td>
+      <tr>
+    <% end %>
+  </table>
 
-<br />
+<br/>
 <h2>== Posts.scope_top_three: 3 Records, Order by Name Ascending, Starts 2nd Record==</h2>
 
 <table>
@@ -68,4 +68,24 @@
 <% end %>
 </table>
 
-<%= link_to 'New Post', new_post_path %>
+<style>
+p { width:400px; }
+</style>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<body>
+  <button>Help</button>
+
+  <p>
+    If you would like to make a new post, please click on the link below.
+  </p>
+
+<script>
+  $("p").hide();
+  $("button").click(function () {
+    $("p").fadeToggle("slow", "swing");
+  });
+</script>
+
+<br><%= link_to 'New Post', new_post_path %></br>
